@@ -1,6 +1,11 @@
 package com.imooc.flink.course04;
 
+import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
+import org.apache.flink.api.java.operators.DataSource;
+import org.apache.flink.api.java.tuple.Tuple2;
+import org.apache.flink.api.java.tuple.Tuple3;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +16,15 @@ public class JavaDataSetDataSourceApp {
 
         //fromCollection(env);
 
-        textFile(env);
+        csvFile(env);
 
+
+    }
+
+    public static void csvFile(ExecutionEnvironment env) throws Exception{
+        String filePath = "file:///Users/micheal/Documents/input/people.csv";
+
+        env.readCsvFile(filePath).ignoreFirstLine().includeFields("100").types(String.class).print();
 
     }
 
