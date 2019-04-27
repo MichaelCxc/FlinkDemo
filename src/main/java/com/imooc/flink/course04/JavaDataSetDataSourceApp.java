@@ -9,8 +9,20 @@ public class JavaDataSetDataSourceApp {
     public static void main(String[] args) throws Exception {
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 
-        fromCollection(env);
+        //fromCollection(env);
 
+        textFile(env);
+
+
+    }
+
+    public static void textFile(ExecutionEnvironment env) throws Exception {
+        String filePath = "file:///Users/micheal/Documents/input/hello_world.txt";
+        env.readTextFile(filePath).print();
+        System.out.println("-----分割线-----");
+
+        filePath = "file:///Users/micheal/Documents/input";
+        env.readTextFile(filePath).print();
 
     }
 

@@ -8,11 +8,20 @@ object DataSetDataSourceApp {
 
     val env = ExecutionEnvironment.getExecutionEnvironment
 
-    fromCollection(env)
+    // fromCollection(env)
 
+
+    textFile(env)
 
 
   }
+
+
+  def textFile(env: ExecutionEnvironment): Unit = {
+    val filePath = "file:///Users/micheal/Documents/input/hello_world.txt"
+    env.readTextFile(filePath).print()
+  }
+
 
 
   def fromCollection(env: ExecutionEnvironment): Unit = {
