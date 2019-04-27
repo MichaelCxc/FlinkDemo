@@ -16,6 +16,10 @@ object DataSetDataSourceApp {
     csvFile(env)
   }
 
+  def readRecursiveFiles(env:ExecutionEnvironment): Unit = {
+
+  }
+
   case class MyCaseClass(name:String, age:Int)
 
 
